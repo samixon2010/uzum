@@ -1,0 +1,50 @@
+<style>
+    input {
+        background-color: bisque;  
+        border: none;
+        border-radius: 5px;
+    }
+    h3 {
+        margin-left: 10px;
+        color: blueviolet;
+    }
+    .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        border: 2px solid black;
+        border-radius: 10px;
+    }
+    .inp {
+        width: 300px;
+        height: 20px;
+        padding: 30px 10px;
+        display: flex;
+        gap: 10px;
+    }
+    button {
+        padding: 5px 10px;
+        background-color: aquamarine;
+        border: none;
+        color: yellowgreen;
+        display: flex;
+        align-items: center;
+    }
+</style>
+<h1>
+    <a href="{% url 'home' %}" style="text-decoration: none; color: pink;">orqaga</a>
+</h1>
+<div class="container">
+    <form action="" method="post" enctype="multipart/form-data">
+    <h3>Telefon narxini kiriting :</h3>
+    {% csrf_token %}
+    <div class="inp">
+    <input type="text" name="name" placeholder="nomi..."><br>
+    <input type="number" name="narxi" placeholder="narxi...$"><br>
+    <input type="text" name="rangi" placeholder="rangi..."><br>
+    <input type="text" name="holati" placeholder="holati..."><br>
+    <input type="text" name="xotira" placeholder="xotira..."><br>
+    <input type="file" id="avatar" name="rasm" accept="image/png, image/jpeg" />
+    <button>send</button>
+</form>
+</div>
+</div>

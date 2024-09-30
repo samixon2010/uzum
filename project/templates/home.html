@@ -1,0 +1,47 @@
+{% load static %}
+<style>
+    body {
+        background: url(https://starwalk.space/gallery/images/what-is-space/1920x1080.jpg);
+    }
+    p {
+        margin-left: 5px;
+        color: blue;
+    }
+    hr {
+        height: 2px;
+        color: red;
+        background-color: red;
+        border: none;
+    }
+    .container {
+        border: 2px solid palevioletred;
+        border-radius: 5px;
+    }
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div class="container">
+    <p style="color: blueviolet;">Telefonlar</p><hr>
+    {% for i in phones %}
+        <a href="{% url 'detail' i.id %}">
+        <p>nomi : {{i.name}}</p>
+        <p>narxi : {{i.narxi}}</p>
+        <p>rangi : {{i.rangi}}</p>
+        <p>holati : {{i.holati}}</p>
+        <p>xotira : {{i.xotira}}</p>
+        {% if i.rasm %}
+        <img src="{{i.rasm.url}}" alt="rasm yoq" style="width: 100px; height: 100px;">
+        {% endif %}
+    </a>
+        <hr>      
+    {% endfor %}
+</div>
+    <h1><a href="{% url 'form' %}" style="text-decoration: none; color: blueviolet;">Telefon sotish</a></h1>
+</body>
+</html>
